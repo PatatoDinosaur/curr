@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="{{str_replace('_', '-'. app()->getLocale()) }}">
+<html lang="{{str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +14,7 @@
         <div class="content">
             <div class="content__post">
                 <h3>本文</h3>
-                <p3>{{$post->body}}</p3>
+                <p>{{$post->body}}</p>
             </div>
         </div>
         <div class="footer">

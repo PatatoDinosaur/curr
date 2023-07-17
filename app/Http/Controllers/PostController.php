@@ -25,5 +25,15 @@ class PostController extends Controller
         return view('posts.show')->with (['post'=> $post]);
         //'post'はbladeファイルで使う変数。$postはid=1のPostインスタンス
     }
-    
+    public function create()
+    {
+        return view('posts.create');
+    }
+    //投稿処理用の関数
+    public function store(Request $request, Post $post)
+    {
+        $input = $request['post'];
+        $post->fill($input)->save();
+        return redirect('/posts/' . $post->id);
+    }
 }
