@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>Blog</title>
         
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel"stylesheet">
     </head>
     <body class="anticliased">
         <h1>Blog name</h1>
