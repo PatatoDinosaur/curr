@@ -6,6 +6,8 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200, 600" rel="stylesheet">
     </head>
+    <x-app-layout>
+        <x-slot name="header">
     <body>
         <h1>Blog Name</h1>
         <a href='/posts/create'>create</a>
@@ -25,10 +27,13 @@
                             @method('DELETE')
                             <button type="button" onclick="deletePost({{$post->id}})">delete</button>
                         </form>
-
+                        <br>
                     </div>
             @endforeach
         </div>
+                    <p>
+                        ログインユーザー:{{Auth::user()->name}}
+                    </p>
         <div class='paginate'>
             {{$posts->links()}}
         </div>
@@ -43,4 +48,7 @@
             }
         </script>
     </body>
+    </x-slot>
+    </x-app-layout>
+        
 </html>
