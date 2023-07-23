@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Http\Requests\PostRequest;
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class PostController extends Controller
 {
@@ -26,10 +27,12 @@ class PostController extends Controller
         return view('posts/show')->with (['post'=> $post]);
         //'post'はbladeファイルで使う変数。$postはid=1のPostインスタンス
     }
+    /* 8-4で追加したブログ作成関数
     public function create()
     {
         return view('posts/create');
     }
+    */
     //投稿処理用の関数
     public function store(Request $request, Post $post)
     {
@@ -54,5 +57,10 @@ class PostController extends Controller
     {
         $post->delete();
         return redirect('/');
+    }
+    
+    public function create(Category $category)
+    {
+        return view('posts.create')->with(['categories' => $category->get()]);
     }
 }
